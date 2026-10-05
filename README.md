@@ -1,5 +1,24 @@
 # NP Construction
 
+## Copyright & Usage Notice
+
+© 2026 NP Construction. All Rights Reserved.
+
+This repository contains proprietary source code and project materials
+developed for NP Construction.
+
+The code, design, documentation, assets, and other materials in this
+repository may not be copied, reproduced, modified, distributed, published,
+or reused in whole or in part for personal, commercial, academic, or other
+projects without prior written permission from the owner.
+
+This repository is **not open source** and no license is granted to use,
+modify, or redistribute its contents.
+
+For permission or licensing inquiries, please contact the project owner.
+
+---
+
 NP Construction is split into two applications:
 
 - `frontend/`: React, Vite, and Tailwind CSS; designed to be deployed to Vercel.
