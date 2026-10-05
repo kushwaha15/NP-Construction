@@ -1,0 +1,15 @@
+# Netlify configuration for NP Construction React SPA
+
+[build]
+  # Run this from the frontend/ folder
+  command     = "npm run build:netlify"
+  publish     = "dist"
+
+[build.environment]
+  NODE_VERSION = "18"
+
+# SPA routing — send all routes to index.html
+[[redirects]]
+  from   = "/*"
+  to     = "/index.html"
+  status = 200

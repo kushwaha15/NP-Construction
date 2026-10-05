@@ -1,0 +1,248 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ─── CSS custom properties ─────────────────────────────── */
+:root {
+  --navy:       #0B1F3A;
+  --steel:      #2F6FED;
+  --mist:       #F5F7FA;
+  --mist-border:#E6EAF0;
+  --mist-text:  #5B6B80;
+  --crimson:    #E63946;
+  --amber:      #F5A623;
+}
+
+/* ─── Base resets ───────────────────────────────────────── */
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  color: #0B1F3A;
+  overflow-x: hidden;
+  margin: 0;
+}
+img { max-width: 100%; display: block; }
+a   { text-decoration: none; color: inherit; }
+ul  { list-style: none; margin: 0; padding: 0; }
+
+/* ─── Layout helpers ────────────────────────────────────── */
+.container-x { width: min(100% - 2rem, 72rem); margin-inline: auto; }
+
+/* ─── Section backgrounds ───────────────────────────────── */
+.section-light { background: #fff; }
+.section-mist  { background: #F5F7FA; }
+.section-dark  { background: #0B1F3A; color: #fff; }
+
+/* Photo-backed dark section — add bg-image via inline style or Tailwind bg-[url()] */
+.section-dark-photo {
+  position: relative;
+  background-color: #0B1F3A;
+  background-size: cover;
+  background-position: center;
+  color: #fff;
+  overflow: hidden;
+}
+.section-dark-photo::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(11, 31, 58, 0.75);
+  z-index: 1;
+}
+.section-dark-photo > .container-x,
+.section-dark-photo > div { position: relative; z-index: 2; }
+
+/* ─── Buttons ───────────────────────────────────────────── */
+.btn-navy, .btn-steel, .btn-amber, .btn-ghost,
+.btn-outline-white, .btn-outline-steel {
+  min-height: 44px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: .5rem;
+  border-radius: .5rem;
+  padding: .75rem 1.25rem;
+  font-weight: 700;
+  transition: transform .2s ease, background-color .2s ease, color .2s ease, border-color .2s ease;
+}
+.btn-navy  { background: #0B1F3A; color: #fff; }
+.btn-steel { background: #2F6FED; color: #fff; }
+.btn-amber { background: #F5A623; color: #0B1F3A; }
+.btn-ghost { border: 1px solid rgba(255,255,255,.45); color: #fff; }
+.btn-outline-white {
+  border: 2px solid rgba(255,255,255,0.6);
+  color: #fff;
+  background: transparent;
+}
+.btn-outline-steel {
+  border: 2px solid #2F6FED;
+  color: #2F6FED;
+  background: transparent;
+}
+.btn-navy:hover, .btn-steel:hover, .btn-amber:hover,
+.btn-ghost:hover, .btn-outline-white:hover, .btn-outline-steel:hover {
+  transform: translateY(-2px);
+}
+.btn-outline-white:hover { background: rgba(255,255,255,0.08); border-color: #fff; }
+.btn-outline-steel:hover { background: rgba(47,111,237,0.08); }
+
+/* ─── Heading underline stroke (crimson accent) ─────────── */
+/*
+  Usage: <h2 class="heading-underline">…</h2>
+  Adds a 48px × 3px crimson bar under the heading.
+*/
+.heading-underline {
+  display: inline-block;
+  position: relative;
+  padding-bottom: 12px;
+  margin-bottom: 4px;
+}
+.heading-underline::after {
+  content: '';
+  position: absolute;
+  bottom: 0; left: 0;
+  width: 48px; height: 3px;
+  background: #E63946;
+  border-radius: 2px;
+}
+
+/* ─── Category / eyebrow label ──────────────────────────── */
+/*
+  Usage: <span class="label-cat">What we do</span>
+  All-caps, spaced, steel-blue. On dark: add text-white/70 via Tailwind.
+*/
+.label-cat {
+  display: block;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: #2F6FED;
+}
+.label-cat-light { color: rgba(255,255,255,0.65); }
+
+/* ─── Stat card (achievements band) ────────────────────── */
+/*
+  Usage: <div class="stat-card">
+           <div class="stat-card-icon">…icon…</div>
+           <p class="stat-card-value">350+</p>
+           <p class="stat-card-label">Projects Completed</p>
+         </div>
+*/
+.stat-card {
+  background: rgba(255,255,255,0.07);
+  border: 1px solid rgba(255,255,255,0.14);
+  border-radius: 14px;
+  padding: 1.75rem 1.25rem;
+  text-align: center;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  transition: background .25s ease, transform .25s ease;
+}
+.stat-card:hover { background: rgba(255,255,255,0.12); transform: translateY(-3px); }
+.stat-card-icon  { margin: 0 auto 0.75rem; width: 2.25rem; height: 2.25rem; color: #F5A623; }
+.stat-card-value { font-size: 2.25rem; font-weight: 800; color: #fff; line-height: 1; }
+.stat-card-label {
+  font-size: 0.72rem; font-weight: 600;
+  color: rgba(255,255,255,0.60);
+  margin-top: 0.4rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+/* ─── Pillar card (four-pillar section) ─────────────────── */
+.pillar-card {
+  text-align: center;
+  padding: 3rem 1.75rem;
+  border-right: 1px solid rgba(255,255,255,0.10);
+  transition: background .25s ease;
+}
+.pillar-card:last-child { border-right: none; }
+.pillar-card:hover { background: rgba(255,255,255,0.04); }
+.pillar-icon  { margin: 0 auto 1.25rem; width: 3rem; height: 3rem; color: #F5A623; }
+.pillar-title {
+  font-size: 0.78rem; font-weight: 700;
+  letter-spacing: 0.14em; text-transform: uppercase;
+  color: #fff; margin-bottom: 0.625rem;
+}
+.pillar-text { font-size: 0.875rem; color: rgba(255,255,255,0.55); line-height: 1.65; }
+
+/* ─── CTA band ──────────────────────────────────────────── */
+.cta-band {
+  position: relative;
+  background: #0B1F3A;
+  overflow: hidden;
+}
+.cta-band-bg {
+  position: absolute;
+  right: -2rem; top: 50%;
+  transform: translateY(-50%);
+  opacity: 0.045;
+  pointer-events: none;
+  width: 520px;
+  height: auto;
+}
+
+/* ─── Footer column heading with crimson underline ─────── */
+.footer-col-title {
+  font-size: 0.72rem; font-weight: 700;
+  letter-spacing: 0.18em; text-transform: uppercase;
+  color: #fff;
+  padding-bottom: 10px; margin-bottom: 1.25rem;
+  position: relative;
+  display: inline-block;
+}
+.footer-col-title::after {
+  content: '';
+  position: absolute;
+  bottom: 0; left: 0;
+  width: 28px; height: 2px;
+  background: #E63946;
+  border-radius: 2px;
+}
+
+/* ─── Scroll-reveal ─────────────────────────────────────── */
+.fade-up {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity .6s ease, transform .6s ease;
+}
+.fade-up.visible { opacity: 1; transform: translateY(0); }
+
+/* ─── Reduced motion ────────────────────────────────────── */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    scroll-behavior: auto !important;
+    animation-duration: .01ms !important;
+    transition-duration: .01ms !important;
+  }
+  .fade-up { opacity: 1; transform: none; }
+  .stat-card:hover, .pillar-card:hover, .btn-navy:hover,
+  .btn-steel:hover, .btn-amber:hover, .btn-ghost:hover,
+  .btn-outline-white:hover, .btn-outline-steel:hover { transform: none; }
+}
+
+/* ─── Marquee ───────────────────────────────────────────── */
+@keyframes marquee {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+.marquee-track { animation: marquee 25s linear infinite; }
+.marquee-track:hover { animation-play-state: paused; }
+
+/* ─── Timeline ──────────────────────────────────────────── */
+.timeline-line { position: relative; }
+.timeline-line::before {
+  content: '';
+  position: absolute;
+  left: 16px; top: 0; bottom: 0;
+  width: 2px;
+  background: linear-gradient(to bottom, #E07B39, #0A1628);
+}
+
+/* ─── Quill editor styles ───────────────────────────────── */
+.ql-toolbar { border-radius: 8px 8px 0 0 !important; }
+.ql-container { border-radius: 0 0 8px 8px !important; min-height: 200px; }

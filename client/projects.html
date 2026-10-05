@@ -1,0 +1,346 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Projects | NP Construction – Steel Project Portfolio India</title>
+  <meta name="description" content="View NP Construction's portfolio of completed steel projects — residential buildings, commercial complexes, and industrial structures across India." />
+  <meta name="keywords" content="steel construction projects India, structural steel portfolio, NP Construction projects, TMT work projects" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+<header id="header">
+  <div class="container">
+    <nav class="nav-inner">
+      <a href="index.html" class="nav-logo">
+        <div class="nav-logo-icon">NP</div>
+        <div class="nav-logo-text">
+          <div class="company-name">NP Construction</div>
+          <div class="company-tagline">Steel &amp; Iron Contractor</div>
+        </div>
+      </a>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="projects.html" class="active">Projects</a></li>
+        <li><a href="testimonials.html">Testimonials</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+      <div class="nav-cta" id="navCta">
+        <a href="contact.html" class="btn btn-primary btn-sm">Get Free Quote</a>
+      </div>
+      <div class="hamburger" id="hamburger" aria-label="Toggle menu" role="button" tabindex="0">
+        <span></span><span></span><span></span>
+      </div>
+    </nav>
+  </div>
+</header>
+
+<div class="page-hero">
+  <div class="container">
+    <h1>Our <span style="color:#E07B39;">Projects</span></h1>
+    <p>350+ successfully completed projects across 25+ cities in India</p>
+    <div class="breadcrumb">
+      <a href="index.html">Home</a>
+      <i class="fas fa-chevron-right" style="font-size:.7rem;color:rgba(255,255,255,.4);"></i>
+      <span>Projects</span>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════════════════════
+     PORTFOLIO GRID
+══════════════════════════════════════════════════════════ -->
+<section class="section-pad">
+  <div class="container">
+    <div class="text-center fade-in">
+      <span class="section-label">Our Portfolio</span>
+      <h2 class="section-heading">Completed <span>Projects</span></h2>
+      <div class="divider"></div>
+      <p class="section-sub">Click any project to view full image. Filter by project type.</p>
+    </div>
+
+    <!-- Filter Buttons -->
+    <div class="filter-bar">
+      <button class="filter-btn active" data-filter="all">All Projects</button>
+      <button class="filter-btn" data-filter="residential">Residential</button>
+      <button class="filter-btn" data-filter="commercial">Commercial</button>
+      <button class="filter-btn" data-filter="industrial">Industrial</button>
+    </div>
+
+    <!-- Projects Grid -->
+    <div class="projects-grid" id="projectsGrid">
+
+      <!-- PROJECT 1 — REPLACE: PROJECT_1_IMAGE — recommended size 600x400px -->
+      <div class="project-card" data-category="residential"
+           data-img="images/project-1.jpg"
+           data-name="Sunrise Residency" data-location="Mumbai, Maharashtra">
+        <div class="project-img-wrap">
+          <img class="project-img" src="images/project-1.jpg" alt="Sunrise Residency"
+               onerror="this.src='https://placehold.co/600x400/0A1628/E07B39?text=Project+1';" />
+          <div class="project-overlay"><i class="fas fa-search-plus"></i></div>
+          <span class="project-type-badge">Residential</span>
+        </div>
+        <div class="project-info">
+          <h4>Sunrise Residency</h4>
+          <div class="location"><i class="fas fa-map-marker-alt"></i> Mumbai, Maharashtra</div>
+        </div>
+      </div>
+
+      <!-- PROJECT 2 — REPLACE: PROJECT_2_IMAGE — recommended size 600x400px -->
+      <div class="project-card" data-category="commercial"
+           data-img="images/project-2.jpg"
+           data-name="Metro Commercial Tower" data-location="Pune, Maharashtra">
+        <div class="project-img-wrap">
+          <img class="project-img" src="images/project-2.jpg" alt="Metro Commercial Tower"
+               onerror="this.src='https://placehold.co/600x400/0A1628/E07B39?text=Project+2';" />
+          <div class="project-overlay"><i class="fas fa-search-plus"></i></div>
+          <span class="project-type-badge">Commercial</span>
+        </div>
+        <div class="project-info">
+          <h4>Metro Commercial Tower</h4>
+          <div class="location"><i class="fas fa-map-marker-alt"></i> Pune, Maharashtra</div>
+        </div>
+      </div>
+
+      <!-- PROJECT 3 — REPLACE: PROJECT_3_IMAGE — recommended size 600x400px -->
+      <div class="project-card" data-category="industrial"
+           data-img="images/project-3.jpg"
+           data-name="AKS Warehouse" data-location="Nashik, Maharashtra">
+        <div class="project-img-wrap">
+          <img class="project-img" src="images/project-3.jpg" alt="AKS Warehouse"
+               onerror="this.src='https://placehold.co/600x400/0A1628/E07B39?text=Project+3';" />
+          <div class="project-overlay"><i class="fas fa-search-plus"></i></div>
+          <span class="project-type-badge">Industrial</span>
+        </div>
+        <div class="project-info">
+          <h4>AKS Warehouse</h4>
+          <div class="location"><i class="fas fa-map-marker-alt"></i> Nashik, Maharashtra</div>
+        </div>
+      </div>
+
+      <!-- PROJECT 4 — REPLACE: PROJECT_4_IMAGE — recommended size 600x400px -->
+      <div class="project-card" data-category="residential"
+           data-img="images/project-4.jpg"
+           data-name="Green Valley Apartments" data-location="Thane, Maharashtra">
+        <div class="project-img-wrap">
+          <img class="project-img" src="images/project-4.jpg" alt="Green Valley Apartments"
+               onerror="this.src='https://placehold.co/600x400/0A1628/E07B39?text=Project+4';" />
+          <div class="project-overlay"><i class="fas fa-search-plus"></i></div>
+          <span class="project-type-badge">Residential</span>
+        </div>
+        <div class="project-info">
+          <h4>Green Valley Apartments</h4>
+          <div class="location"><i class="fas fa-map-marker-alt"></i> Thane, Maharashtra</div>
+        </div>
+      </div>
+
+      <!-- PROJECT 5 — REPLACE: PROJECT_5_IMAGE — recommended size 600x400px -->
+      <div class="project-card" data-category="commercial"
+           data-img="images/project-5.jpg"
+           data-name="Business Park Phase 1" data-location="Navi Mumbai, Maharashtra">
+        <div class="project-img-wrap">
+          <img class="project-img" src="images/project-5.jpg" alt="Business Park"
+               onerror="this.src='https://placehold.co/600x400/0A1628/E07B39?text=Project+5';" />
+          <div class="project-overlay"><i class="fas fa-search-plus"></i></div>
+          <span class="project-type-badge">Commercial</span>
+        </div>
+        <div class="project-info">
+          <h4>Business Park Phase 1</h4>
+          <div class="location"><i class="fas fa-map-marker-alt"></i> Navi Mumbai, Maharashtra</div>
+        </div>
+      </div>
+
+      <!-- PROJECT 6 — REPLACE: PROJECT_6_IMAGE — recommended size 600x400px -->
+      <div class="project-card" data-category="industrial"
+           data-img="images/project-6.jpg"
+           data-name="Shree Steel Factory" data-location="Aurangabad, Maharashtra">
+        <div class="project-img-wrap">
+          <img class="project-img" src="images/project-6.jpg" alt="Shree Steel Factory"
+               onerror="this.src='https://placehold.co/600x400/0A1628/E07B39?text=Project+6';" />
+          <div class="project-overlay"><i class="fas fa-search-plus"></i></div>
+          <span class="project-type-badge">Industrial</span>
+        </div>
+        <div class="project-info">
+          <h4>Shree Steel Factory</h4>
+          <div class="location"><i class="fas fa-map-marker-alt"></i> Aurangabad, Maharashtra</div>
+        </div>
+      </div>
+
+      <!-- PROJECT 7 — REPLACE: PROJECT_7_IMAGE — recommended size 600x400px -->
+      <div class="project-card" data-category="residential"
+           data-img="images/project-7.jpg"
+           data-name="Royal Heights Tower" data-location="Nagpur, Maharashtra">
+        <div class="project-img-wrap">
+          <img class="project-img" src="images/project-7.jpg" alt="Royal Heights"
+               onerror="this.src='https://placehold.co/600x400/0A1628/E07B39?text=Project+7';" />
+          <div class="project-overlay"><i class="fas fa-search-plus"></i></div>
+          <span class="project-type-badge">Residential</span>
+        </div>
+        <div class="project-info">
+          <h4>Royal Heights Tower</h4>
+          <div class="location"><i class="fas fa-map-marker-alt"></i> Nagpur, Maharashtra</div>
+        </div>
+      </div>
+
+      <!-- PROJECT 8 — REPLACE: PROJECT_8_IMAGE — recommended size 600x400px -->
+      <div class="project-card" data-category="commercial"
+           data-img="images/project-8.jpg"
+           data-name="City Mall Steel Structure" data-location="Surat, Gujarat">
+        <div class="project-img-wrap">
+          <img class="project-img" src="images/project-8.jpg" alt="City Mall"
+               onerror="this.src='https://placehold.co/600x400/0A1628/E07B39?text=Project+8';" />
+          <div class="project-overlay"><i class="fas fa-search-plus"></i></div>
+          <span class="project-type-badge">Commercial</span>
+        </div>
+        <div class="project-info">
+          <h4>City Mall Steel Structure</h4>
+          <div class="location"><i class="fas fa-map-marker-alt"></i> Surat, Gujarat</div>
+        </div>
+      </div>
+
+      <!-- PROJECT 9 — REPLACE: PROJECT_9_IMAGE — recommended size 600x400px -->
+      <div class="project-card" data-category="industrial"
+           data-img="images/project-9.jpg"
+           data-name="Mega Logistics Hub" data-location="Bhiwandi, Maharashtra">
+        <div class="project-img-wrap">
+          <img class="project-img" src="images/project-9.jpg" alt="Mega Logistics Hub"
+               onerror="this.src='https://placehold.co/600x400/0A1628/E07B39?text=Project+9';" />
+          <div class="project-overlay"><i class="fas fa-search-plus"></i></div>
+          <span class="project-type-badge">Industrial</span>
+        </div>
+        <div class="project-info">
+          <h4>Mega Logistics Hub</h4>
+          <div class="location"><i class="fas fa-map-marker-alt"></i> Bhiwandi, Maharashtra</div>
+        </div>
+      </div>
+
+      <!-- PROJECT 10 — REPLACE: PROJECT_10_IMAGE — recommended size 600x400px -->
+      <div class="project-card" data-category="residential"
+           data-img="images/project-10.jpg"
+           data-name="Shiv Sai Complex" data-location="Kolhapur, Maharashtra">
+        <div class="project-img-wrap">
+          <img class="project-img" src="images/project-10.jpg" alt="Shiv Sai Complex"
+               onerror="this.src='https://placehold.co/600x400/0A1628/E07B39?text=Project+10';" />
+          <div class="project-overlay"><i class="fas fa-search-plus"></i></div>
+          <span class="project-type-badge">Residential</span>
+        </div>
+        <div class="project-info">
+          <h4>Shiv Sai Complex</h4>
+          <div class="location"><i class="fas fa-map-marker-alt"></i> Kolhapur, Maharashtra</div>
+        </div>
+      </div>
+
+      <!-- PROJECT 11 — REPLACE: PROJECT_11_IMAGE — recommended size 600x400px -->
+      <div class="project-card" data-category="commercial"
+           data-img="images/project-11.jpg"
+           data-name="IT Park Block B" data-location="Hyderabad, Telangana">
+        <div class="project-img-wrap">
+          <img class="project-img" src="images/project-11.jpg" alt="IT Park"
+               onerror="this.src='https://placehold.co/600x400/0A1628/E07B39?text=Project+11';" />
+          <div class="project-overlay"><i class="fas fa-search-plus"></i></div>
+          <span class="project-type-badge">Commercial</span>
+        </div>
+        <div class="project-info">
+          <h4>IT Park Block B</h4>
+          <div class="location"><i class="fas fa-map-marker-alt"></i> Hyderabad, Telangana</div>
+        </div>
+      </div>
+
+      <!-- PROJECT 12 — REPLACE: PROJECT_12_IMAGE — recommended size 600x400px -->
+      <div class="project-card" data-category="industrial"
+           data-img="images/project-12.jpg"
+           data-name="Cold Storage Facility" data-location="Pune, Maharashtra">
+        <div class="project-img-wrap">
+          <img class="project-img" src="images/project-12.jpg" alt="Cold Storage"
+               onerror="this.src='https://placehold.co/600x400/0A1628/E07B39?text=Project+12';" />
+          <div class="project-overlay"><i class="fas fa-search-plus"></i></div>
+          <span class="project-type-badge">Industrial</span>
+        </div>
+        <div class="project-info">
+          <h4>Cold Storage Facility</h4>
+          <div class="location"><i class="fas fa-map-marker-alt"></i> Pune, Maharashtra</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- Lightbox -->
+<div class="lightbox" id="lightbox" role="dialog" aria-modal="true">
+  <div class="lightbox-inner">
+    <button class="lightbox-close" id="lightboxClose" aria-label="Close"><i class="fas fa-times"></i></button>
+    <img class="lightbox-img" id="lightboxImg" src="" alt="" />
+    <div class="lightbox-caption" id="lightboxCaption"></div>
+  </div>
+</div>
+
+<!-- Footer -->
+<footer id="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="nav-logo">
+          <div class="nav-logo-icon">NP</div>
+          <div class="nav-logo-text">
+            <div class="company-name">NP Construction</div>
+            <div class="company-tagline">Steel &amp; Iron Contractor</div>
+          </div>
+        </div>
+        <p>India's trusted structural steel &amp; iron contractor delivering quality for 15+ years.</p>
+        <div class="social-links">
+          <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+          <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+          <a href="https://wa.me/917016593309" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="index.html"><i class="fas fa-chevron-right"></i> Home</a></li>
+          <li><a href="about.html"><i class="fas fa-chevron-right"></i> About Us</a></li>
+          <li><a href="services.html"><i class="fas fa-chevron-right"></i> Services</a></li>
+          <li><a href="projects.html"><i class="fas fa-chevron-right"></i> Projects</a></li>
+          <li><a href="contact.html"><i class="fas fa-chevron-right"></i> Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Contact Info</h4>
+        <div class="footer-contact-item"><i class="fas fa-phone"></i><span><a href="tel:+917016593309" style="color:inherit;">+91 70165 93309</a></span></div>
+        <div class="footer-contact-item"><i class="fas fa-envelope"></i><span><a href="mailto:ajeetsanu177@gmail.com" style="color:inherit;">ajeetsanu177@gmail.com</a></span></div>
+      </div>
+      <div class="footer-col">
+        <h4>Project Types</h4>
+        <ul>
+          <li><a href="#" data-filter-link="residential"><i class="fas fa-chevron-right"></i> Residential</a></li>
+          <li><a href="#" data-filter-link="commercial"><i class="fas fa-chevron-right"></i> Commercial</a></li>
+          <li><a href="#" data-filter-link="industrial"><i class="fas fa-chevron-right"></i> Industrial</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div style="border-top:1px solid rgba(255,255,255,.08);">
+    <div class="container footer-bottom">
+      <span class="copyright">© 2025 NP Construction. All Rights Reserved.</span>
+      <span class="made-with">Made with <span>♥</span> for Indian Builders</span>
+    </div>
+  </div>
+</footer>
+
+<div class="whatsapp-float">
+  <span class="whatsapp-tooltip">Chat on WhatsApp</span>
+  <a href="https://wa.me/917016593309?text=Hello%2C%20I%20need%20a%20quote." target="_blank" rel="noopener" class="whatsapp-btn" aria-label="WhatsApp">
+    <i class="fab fa-whatsapp"></i><span class="wa-pulse"></span>
+  </a>
+</div>
+<button class="back-to-top" id="backToTop" aria-label="Back to top"><i class="fas fa-chevron-up"></i></button>
+<script src="js/main.js"></script>
+<script src="js/projects.js"></script>
+</body>
+</html>

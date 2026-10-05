@@ -1,0 +1,20 @@
+{
+  "name": "np-construction",
+  "version": "1.0.0",
+  "description": "NP Construction – Structural Steel Contractor Website",
+  "main": "server/server.js",
+  "scripts": {
+    "start":        "node server/server.js",
+    "dev":          "concurrently --names \"SERVER,CLIENT\" --prefix-colors \"cyan,green\" \"npm run dev:server\" \"npm run dev:frontend\"",
+    "dev:server":   "cd server && node server.js",
+    "dev:frontend": "npm run dev --prefix frontend",
+    "build":        "npm run build --prefix frontend",
+    "install-all":  "npm install --prefix server && npm install --prefix frontend"
+  },
+  "engines": {
+    "node": ">=16.0.0"
+  },
+  "devDependencies": {
+    "concurrently": "^9.1.2"
+  }
+}

@@ -1,0 +1,13 @@
+User-agent: *
+Allow: /
+
+# Block admin routes from all crawlers
+Disallow: /admin
+Disallow: /admin/
+
+# Block API routes
+Disallow: /api/
+
+# Sitemap location
+# ⚠️  Replace with your real domain before going live
+Sitemap: https://REPLACE_WITH_RENDER_URL.onrender.com/sitemap.xml
