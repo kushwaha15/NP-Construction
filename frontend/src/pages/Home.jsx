@@ -640,7 +640,7 @@ export default function Home() {
     '@type': 'GeneralContractor',
     name: SITE.name,
     description: 'Iron cutting and binding (RCC reinforcement) contractor for beams, slabs, columns, and roofs in Gujarat, India.',
-    url: 'https://REPLACE_WITH_RENDER_URL.onrender.com',
+    url: 'https://np-construction.onrender.com',
     telephone: SITE.phone,
     email: SITE.email,
     address: {

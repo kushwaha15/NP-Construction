@@ -10,4 +10,4 @@ Disallow: /api/
 
 # Sitemap location
 # ⚠️  Replace with your real domain before going live
-Sitemap: https://REPLACE_WITH_RENDER_URL.onrender.com/sitemap.xml
+Sitemap: https://np-construction.onrender.com/sitemap.xml
