@@ -189,6 +189,7 @@ export default function Projects() {
               <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
                 {visible.map(project => (
                   <button type="button" key={project.id} onClick={() => setSelected(project)}
+                    aria-label={`View project: ${project.title}`}
                     className="group overflow-hidden rounded-card bg-white text-left shadow-card
                                transition-all hover:-translate-y-1 hover:shadow-soft">
                     <div className="relative aspect-[4/3] overflow-hidden bg-mist-200">

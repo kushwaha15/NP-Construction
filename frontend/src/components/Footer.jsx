@@ -25,10 +25,10 @@ const SERVICES = [
 ];
 
 const SOCIALS = [
-  { label: 'Facebook',  href: '#',                              icon: 'f'  },
-  { label: 'Instagram', href: '#',                              icon: 'ig' },
-  { label: 'WhatsApp',  href: `https://wa.me/${SITE.whatsapp}`, icon: <MessageCircle size={16} /> },
-  { label: 'YouTube',   href: '#',                              icon: 'yt' },
+  { label: 'Facebook',  href: 'https://www.facebook.com/profile.php?id=61572369008598', icon: 'f'  },
+  { label: 'Instagram', href: 'https://www.instagram.com/anilverse177/',                icon: 'ig' },
+  { label: 'WhatsApp',  href: `https://wa.me/${SITE.whatsapp}`,                         icon: <MessageCircle size={16} /> },
+  // YouTube removed — no active channel
 ];
 
 const linkCls = 'group flex items-center gap-2 text-sm text-white/55 transition-colors hover:text-amber leading-relaxed';
@@ -49,7 +49,7 @@ export default function Footer() {
             />
             <span>
               <span className="block text-lg font-black leading-none text-white">{SITE.name}</span>
-              <span className="mt-1 block text-[9px] uppercase tracking-[0.2em] text-white/40">{SITE.tagline}</span>
+              <span className="mt-1 block text-[9px] uppercase tracking-[0.2em] text-white/50">{SITE.tagline}</span>
             </span>
           </Link>
 
@@ -143,7 +143,7 @@ export default function Footer() {
 
           {/* Working hours */}
           <div className="rounded-xl border border-white/10 bg-white/4 p-4">
-            <p className="text-[10px] font-bold uppercase tracking-widest text-white/35 mb-2">Working Hours</p>
+            <p className="text-[10px] font-bold uppercase tracking-widest text-white/50 mb-2">Working Hours</p>
             <p className="text-sm font-semibold text-white">{SITE.hours}</p>
           </div>
         </div>
@@ -152,7 +152,7 @@ export default function Footer() {
 
       {/* Bottom bar */}
       <div className="border-t border-white/8">
-        <div className="container-x flex flex-col gap-2 py-5 text-xs text-white/35
+        <div className="container-x flex flex-col gap-2 py-5 text-xs text-white/50
                         sm:flex-row sm:items-center sm:justify-between">
           <span>© {new Date().getFullYear()} {SITE.name}. All Rights Reserved.</span>
           <div className="flex gap-4">

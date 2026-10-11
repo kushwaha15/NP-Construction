@@ -26,7 +26,7 @@ export default function AdminAnalytics() {
   if (!stats) return (
     <div className="p-6 flex items-center justify-center min-h-[400px]">
       <div className="text-center text-gray-400">
-        <i className="fas fa-spinner fa-spin text-3xl mb-3 block" />Loading analytics…
+        <i className="fas fa-spinner fa-spin" />Loading analytics…
       </div>
     </div>
   );

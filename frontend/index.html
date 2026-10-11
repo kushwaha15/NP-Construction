@@ -2,14 +2,36 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <link rel="icon" type="image/png" href="/images/NP-Contruction-logo.png" />
+  <link rel="icon" type="image/webp" href="/images/NP-Contruction-logo.webp" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>NP Construction | Structural Steel & Iron Contractor</title>
+
+  <!-- Preconnect to Google Fonts CDN -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
-  <!-- Font Awesome CDN — icons used throughout the site -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" crossorigin="anonymous" />
+
+  <!-- Plus Jakarta Sans — weights 500/700/800 only -->
+  <!-- Non-blocking font load: preload triggers download early, onload swaps rel to stylesheet -->
+  <!-- display=swap already in URL — text shows in fallback font immediately -->
+  <!-- <noscript> provides a synchronous fallback for browsers with JS disabled -->
+  <link rel="preload"
+        href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;700;800&display=swap"
+        as="style"
+        onload="this.onload=null;this.rel='stylesheet'" />
+  <noscript>
+    <link rel="stylesheet"
+          href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;700;800&display=swap" />
+  </noscript>
+
+  <!-- Preload the LCP hero image — mobile gets the 750px version, desktop the full size -->
+  <link rel="preload" as="image"
+        href="/images/Rooftop-image.webp"
+        imagesrcset="/images/Rooftop-image-mobile.webp 750w, /images/Rooftop-image.webp 1441w"
+        imagesizes="100vw"
+        fetchpriority="high" />
+
+  <!-- Inter font REMOVED — was never used (site uses Plus Jakarta Sans) -->
+  <!-- Font Awesome CDN REMOVED — replaced with lucide-react icons throughout -->
 </head>
 <body>
   <div id="root"></div>

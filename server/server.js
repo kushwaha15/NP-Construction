@@ -2,6 +2,7 @@
 require('dotenv').config({ path: __dirname + '/.env' });
 
 const express    = require('express');
+const helmet     = require('helmet');
 const cors       = require('cors');
 const mongoose   = require('mongoose');
 const path       = require('path');
@@ -46,6 +47,74 @@ const upload = multer({
 // ── Rate limiters ─────────────────────────────────────────
 const apiLimiter  = rateLimit({ windowMs:15*60*1000, max:100, standardHeaders:true, legacyHeaders:false });
 const formLimiter = rateLimit({ windowMs:60*60*1000, max:10,  standardHeaders:true, legacyHeaders:false });
+
+// ── Security headers (helmet) ─────────────────────────────
+app.disable('x-powered-by'); // redundant with helmet but explicit
+
+app.use(helmet({
+  // X-Content-Type-Options: nosniff
+  contentTypeOptions: true,
+
+  // X-Frame-Options: SAMEORIGIN (prevents clickjacking)
+  frameguard: { action: 'sameorigin' },
+
+  // Strict-Transport-Security (HTTPS enforced after first visit)
+  hsts: {
+    maxAge:            31536000, // 1 year in seconds
+    includeSubDomains: true,
+    preload:           false,    // only set true after submitting to HSTS preload list
+  },
+
+  // Referrer-Policy: strict-origin-when-cross-origin
+  // Sends full referrer for same-origin, only origin for cross-origin HTTPS
+  referrerPolicy: { policy: 'strict-origin-when-cross-origin' },
+
+  // X-XSS-Protection: disabled (CSP is the modern replacement; 1;mode=block can cause issues)
+  xssFilter: false,
+
+  // X-DNS-Prefetch-Control: off (privacy improvement)
+  dnsPrefetchControl: { allow: false },
+
+  // Content-Security-Policy — carefully tuned for NP Construction
+  contentSecurityPolicy: {
+    directives: {
+      defaultSrc:    ["'self'"],
+
+      // Scripts: self + Google reCAPTCHA
+      scriptSrc:     ["'self'", "'unsafe-inline'", "https://www.google.com", "https://www.gstatic.com", "https://cdnjs.cloudflare.com"],
+
+      // Styles: self + Google Fonts + Font Awesome CDN (used in admin)
+      styleSrc:      ["'self'", "'unsafe-inline'", "https://fonts.googleapis.com", "https://cdnjs.cloudflare.com"],
+
+      // Fonts: self + Google Fonts + Font Awesome CDN
+      fontSrc:       ["'self'", "https://fonts.gstatic.com", "https://cdnjs.cloudflare.com"],
+
+      // Images: self + Cloudinary (portfolio images) + data: URIs (used by some libraries)
+      imgSrc:        ["'self'", "data:", "https://res.cloudinary.com", "https://img.youtube.com", "https://placehold.co"],
+
+      // Frames: reCAPTCHA uses iframes
+      frameSrc:      ["https://www.google.com"],
+
+      // Connections: self API + MongoDB Atlas (via backend, not direct) + Cloudinary upload
+      connectSrc:    ["'self'", "https://api.cloudinary.com"],
+
+      // Media: self + Cloudinary (video uploads)
+      mediaSrc:      ["'self'", "https://res.cloudinary.com"],
+
+      // Objects: none
+      objectSrc:     ["'none'"],
+
+      // Base URI: self only
+      baseUri:       ["'self'"],
+
+      // Form submissions: self only
+      formAction:    ["'self'"],
+
+      // upgrade-insecure-requests: off — let the app handle HTTP/HTTPS
+      upgradeInsecureRequests: null,
+    },
+  },
+}));
 
 // ── Middleware ────────────────────────────────────────────
 app.use(cors({ origin: process.env.CLIENT_URL || '*', methods:['GET','POST','PATCH','DELETE'], allowedHeaders:['Content-Type','Authorization'] }));
@@ -256,3 +325,6 @@ process.on('unhandledRejection', (reason) => {
   console.error('❌ Unhandled Rejection:', reason);
   // Don't exit — keep server running
 });
+
+
+

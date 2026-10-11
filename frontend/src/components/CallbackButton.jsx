@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import axios from 'axios';
 import { API_URL } from '../utils/api';
 import toast from 'react-hot-toast';
+import { Loader2, Phone } from 'lucide-react';
 
 export default function CallbackButton() {
   const [open, setOpen] = useState(false);
@@ -35,7 +36,7 @@ export default function CallbackButton() {
                    px-4 py-3 rounded-full shadow-xl flex items-center gap-2 text-sm font-semibold
                    transition-all hover:scale-105"
         aria-label="Request Callback">
-        <i className="fas fa-phone-alt text-orange-400" />
+        <Phone size={15} className="text-orange-400" aria-hidden="true" />
         <span className="hidden sm:inline">Request Callback</span>
       </button>
 
@@ -86,7 +87,9 @@ export default function CallbackButton() {
               <button type="submit" disabled={loading}
                 className="w-full bg-orange-500 hover:bg-orange-400 disabled:opacity-60 text-white
                            font-bold py-3 rounded-xl transition-colors flex items-center justify-center gap-2">
-                {loading ? <><i className="fas fa-spinner fa-spin" /> Submitting…</> : <><i className="fas fa-phone-alt" /> Request Callback</>}
+                {loading
+                  ? <><Loader2 size={16} className="animate-spin" aria-hidden="true" /> Submitting…</>
+                  : <><Phone size={16} aria-hidden="true" /> Request Callback</>}
               </button>
             </form>
           </div>

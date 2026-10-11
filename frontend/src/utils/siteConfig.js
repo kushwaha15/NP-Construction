@@ -13,7 +13,7 @@ export const SITE = {
   email:       'ajeetsanu177@gmail.com',
   address:     'HIGH-TECH, GMDC Ground, Thaltej, Ahmedabad, Gujarat – 380061',
   hours:       'Mon – Sat: 9:00 AM – 7:00 PM',
-  logo:        '/images/NP-Contruction-logo.png',
+  logo:        '/images/NP-Contruction-logo.webp',
   mapEmbed:    'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3671.4!2d72.5072!3d23.0539!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x395e84f5d8531001%3A0x4ba5a3bb3e4dff8b!2sThaltej%2C%20Ahmedabad%2C%20Gujarat!5e0!3m2!1sen!2sin!4v1700000000000',
 };
 

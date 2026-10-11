@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap');
+/* Plus Jakarta Sans is now loaded via <link> in index.html (not @import — @import is render-blocking) */
 
 @tailwind base;
 @tailwind components;
@@ -204,6 +204,23 @@ ul  { list-style: none; margin: 0; padding: 0; }
   border-radius: 2px;
 }
 
+/* ─── NP-Steel-fabricon responsive background ───────────── */
+/*
+  Used by AchievementsBand and PillarSection in Home.jsx.
+  Mobile (<= 768px) uses the 400px version (27KB).
+  Desktop uses the 800px version (101KB).
+  Inline style= is removed from those sections and replaced
+  with this class so the media query can take effect.
+*/
+.steel-fab-bg {
+  background-image: url('/images/NP-Steel_fabricon.webp');
+}
+@media (max-width: 768px) {
+  .steel-fab-bg {
+    background-image: url('/images/NP-Steel_fabricon-mobile.webp');
+  }
+}
+
 /* ─── Scroll-reveal ─────────────────────────────────────── */
 .fade-up {
   opacity: 0;
@@ -211,6 +228,17 @@ ul  { list-style: none; margin: 0; padding: 0; }
   transition: opacity .6s ease, transform .6s ease;
 }
 .fade-up.visible { opacity: 1; transform: translateY(0); }
+
+/* ─── Hero fade-in (replaces framer-motion on Home hero) ── */
+/* Matches former motion props: opacity 0→1, y 28→0, duration 0.7s */
+@keyframes heroFadeUp {
+  from { opacity: 0; transform: translateY(28px); }
+  to   { opacity: 1; transform: translateY(0);    }
+}
+.hero-fade-in {
+  animation: heroFadeUp 0.7s ease forwards;
+  will-change: opacity, transform;
+}
 
 /* ─── Reduced motion ────────────────────────────────────── */
 @media (prefers-reduced-motion: reduce) {
@@ -220,6 +248,7 @@ ul  { list-style: none; margin: 0; padding: 0; }
     transition-duration: .01ms !important;
   }
   .fade-up { opacity: 1; transform: none; }
+  .hero-fade-in { animation: none; opacity: 1; transform: none; }
   .stat-card:hover, .pillar-card:hover, .btn-navy:hover,
   .btn-steel:hover, .btn-amber:hover, .btn-ghost:hover,
   .btn-outline-white:hover, .btn-outline-steel:hover { transform: none; }

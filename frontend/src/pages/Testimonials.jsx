@@ -2,6 +2,7 @@ import React from 'react';
 import { Helmet } from 'react-helmet-async';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
+import { FileText, MessageCircle, Star } from 'lucide-react';
 import SectionHeading from '../components/SectionHeading';
 
 const REVIEWS = [
@@ -55,9 +56,11 @@ export default function Testimonials() {
               <motion.div key={r.name}
                 initial={{ opacity:0, y:20 }} whileInView={{ opacity:1, y:0 }}
                 viewport={{ once:true }} transition={{ delay: i * 0.06 }}
+                layout={false}
+                style={{ willChange: 'opacity, transform' }}
                 className="bg-white rounded-2xl p-7 shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all">
                 <div className="flex gap-0.5 mb-3">
-                  {[...Array(r.stars)].map((_,j) => <i key={j} className="fas fa-star text-yellow-400 text-sm" />)}
+                  {[...Array(r.stars)].map((_,j) => <Star key={j} size={14} fill="currentColor" className="text-yellow-400" aria-hidden="true" />)}
                 </div>
                 <div className="text-5xl text-orange-400/15 font-serif leading-none mb-2">"</div>
                 <p className="text-gray-500 text-sm leading-relaxed italic mb-5">{r.text}</p>
@@ -81,11 +84,11 @@ export default function Testimonials() {
           <h2 className="text-2xl font-black text-white mb-4">Join Our <span className="text-orange-400">Happy Clients</span></h2>
           <div className="flex gap-4 justify-center flex-wrap">
             <Link to="/contact" className="bg-orange-500 hover:bg-orange-400 text-white font-bold px-7 py-3 rounded-xl inline-flex items-center gap-2 transition-all">
-              <i className="fas fa-file-alt" /> Get Free Quote
+              <FileText size={16} aria-hidden="true" /> Get Free Quote
             </Link>
             <a href="https://wa.me/917016593309" target="_blank" rel="noopener"
               className="border-2 border-white text-white hover:bg-white hover:text-[#0A1628] font-bold px-7 py-3 rounded-xl inline-flex items-center gap-2 transition-all">
-              <i className="fab fa-whatsapp" /> WhatsApp Us
+              <MessageCircle size={16} aria-hidden="true" /> WhatsApp Us
             </a>
           </div>
         </div>

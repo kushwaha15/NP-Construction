@@ -52,7 +52,7 @@ export default function Navbar() {
               <span className="block text-[15px] font-black leading-none text-white tracking-tight">
                 {SITE.name}
               </span>
-              <span className="block text-[9px] font-semibold uppercase tracking-[0.2em] text-white/40 mt-0.5">
+              <span className="block text-[9px] font-semibold uppercase tracking-[0.2em] text-white/50 mt-0.5">
                 {SITE.tagline}
               </span>
             </span>

@@ -130,7 +130,7 @@ function BarBreakdown({ result }) {
               </React.Fragment>
             ))}
           </div>
-          <p className="mt-3 text-xs text-white/40">Bar counts assume 12m standard length. Actual bar schedule from engineer may vary.</p>
+          <p className="mt-3 text-xs text-white/50">Bar counts assume 12m standard length. Actual bar schedule from engineer may vary.</p>
         </div>
       )}
     </div>
@@ -276,7 +276,7 @@ export default function Estimator() {
                     <span className="text-2xl text-white/55"> kg</span>
                   </p>
                   <p className="mt-2 text-sm text-white/60">Estimated rebar weight</p>
-                  <p className="mt-1 text-xs text-white/40">Grade: Fe500 / Fe550 (IS 1786)</p>
+                  <p className="mt-1 text-xs text-white/50">Grade: Fe500 / Fe550 (IS 1786)</p>
 
                   <div className="mt-7 grid gap-3 sm:grid-cols-2">
                     <div className="border border-white/10 p-4">

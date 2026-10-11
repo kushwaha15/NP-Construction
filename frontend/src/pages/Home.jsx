@@ -4,7 +4,6 @@ import { Helmet } from 'react-helmet-async';
 import axios from 'axios';
 import { API_URL } from '../utils/api';
 import toast from 'react-hot-toast';
-import { motion } from 'framer-motion';
 import { ArrowRight, Award, Building2, CheckCircle2,
   HardHat, Layers, MapPin, Phone, Shield, Star,
   TrendingUp, Wrench,
@@ -53,20 +52,24 @@ const STAT_CONFIG = [
    ───────────────────────────────────────────────────────── */
 function HomeHero() {
   return (
-    <section
-      className="relative min-h-[92vh] flex items-center bg-navy overflow-hidden"
-      style={{ backgroundImage: 'url(/images/Rooftop-image.png)', backgroundSize: 'cover', backgroundPosition: 'center' }}
-    >
+    <section className="relative min-h-[92vh] flex items-center bg-navy overflow-hidden">
+      {/* Hero image — srcset serves 750px to mobile, 1441px to desktop */}
+      <img
+        src="/images/Rooftop-image.webp"
+        srcSet="/images/Rooftop-image-mobile.webp 750w, /images/Rooftop-image.webp 1441w"
+        sizes="100vw"
+        alt=""
+        aria-hidden="true"
+        fetchpriority="high"
+        loading="eager"
+        decoding="sync"
+        className="absolute inset-0 w-full h-full object-cover object-center"
+      />
       {/* Dark overlay */}
       <div className="absolute inset-0 bg-gradient-to-r from-navy/95 via-navy/80 to-navy/40" />
 
       <div className="container-x relative z-10 py-32 lg:py-40">
-        <motion.div
-          initial={{ opacity: 0, y: 28 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7 }}
-          className="max-w-2xl"
-        >
+        <div className="max-w-2xl hero-fade-in">
           <span className="label-cat label-cat-light mb-5">
             Gujarat's Trusted Iron Cutting, Binding &amp; Reinforcement Contractor
           </span>
@@ -86,7 +89,7 @@ function HomeHero() {
               View Our Work
             </Link>
           </div>
-        </motion.div>
+        </div>
       </div>
 
       {/* Bottom gradient fade */}
@@ -109,8 +112,7 @@ function AchievementsBand({ liveStats }) {
 
   return (
     <section
-      className="section-dark-photo py-20"
-      style={{ backgroundImage: 'url(/images/NP-Steel_fabricon.jpg)' }}
+      className="section-dark-photo py-20 steel-fab-bg"
     >
       <div className="container-x">
         <div className="text-center mb-12">
@@ -198,8 +200,7 @@ function PillarSection({ liveStats }) {
 
   return (
     <section
-      className="section-dark-photo"
-      style={{ backgroundImage: 'url(/images/NP-Steel_fabricon.jpg)' }}
+      className="section-dark-photo steel-fab-bg"
     >
       <div className="container-x">
         <div className="text-center py-14 pb-0 mb-2">
@@ -321,7 +322,8 @@ function ProjectsSection() {
                       <p className="mt-1.5 text-sm text-mist-500 line-clamp-2">{item.description}</p>
                     )}
                     <Link to="/projects"
-                      className="mt-4 inline-flex items-center gap-1.5 text-sm font-bold text-steel">
+                      className="mt-4 inline-flex items-center gap-1.5 text-sm font-bold text-steel"
+                      aria-label={`View project: ${item.title}`}>
                       View project <ArrowRight size={15} />
                     </Link>
                   </div>

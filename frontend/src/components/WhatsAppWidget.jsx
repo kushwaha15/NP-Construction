@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { MessageCircle, X } from 'lucide-react';
 import { SITE } from '../utils/siteConfig';
 
 const QUICK_MESSAGES = [
@@ -28,7 +29,7 @@ export default function WhatsAppWidget() {
             <div>
               <div className="text-white font-bold text-sm">NP Construction</div>
               <div className="text-green-100 text-xs flex items-center gap-1">
-                <span className="w-1.5 h-1.5 bg-green-200 rounded-full inline-block"></span>
+                <span className="w-1.5 h-1.5 bg-green-200 rounded-full inline-block" />
                 Typically replies in minutes
               </div>
             </div>
@@ -65,7 +66,7 @@ export default function WhatsAppWidget() {
             <button onClick={() => sendMessage()}
               className="w-full bg-[#25D366] hover:bg-green-500 text-white font-bold py-2.5 rounded-xl
                          flex items-center justify-center gap-2 transition-colors text-sm">
-              <i className="fab fa-whatsapp text-base" />
+              <MessageCircle size={18} aria-hidden="true" />
               Start Chat on WhatsApp
             </button>
           </div>
@@ -75,10 +76,12 @@ export default function WhatsAppWidget() {
       {/* FAB */}
       <button onClick={() => setOpen(o => !o)}
         className="w-14 h-14 bg-[#25D366] hover:bg-green-500 text-white rounded-full shadow-xl
-                   flex items-center justify-center text-2xl transition-all hover:scale-110 relative"
+                   flex items-center justify-center transition-all hover:scale-110 relative"
         aria-label="WhatsApp Chat">
-        <i className={`fab fa-whatsapp transition-transform ${open ? 'scale-0 absolute' : 'scale-100'}`} />
-        <i className={`fas fa-times transition-transform ${open ? 'scale-100' : 'scale-0 absolute'}`} />
+        {open
+          ? <X size={26} aria-hidden="true" />
+          : <MessageCircle size={26} aria-hidden="true" />
+        }
         {!open && <span className="absolute -top-1 -right-1 w-3.5 h-3.5 bg-red-500 rounded-full border-2 border-white" />}
       </button>
     </div>

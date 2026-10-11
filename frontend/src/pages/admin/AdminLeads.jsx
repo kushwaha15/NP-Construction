@@ -179,7 +179,7 @@ export default function AdminLeads() {
             </thead>
             <tbody>
               {loading ? (
-                <tr><td colSpan={9} className="text-center py-12 text-gray-400"><i className="fas fa-spinner fa-spin text-2xl mb-2 block" />Loading…</td></tr>
+                <tr><td colSpan={9} className="text-center py-12 text-gray-400"><i className="fas fa-spinner fa-spin" />Loading…</td></tr>
               ) : leads.length === 0 ? (
                 <tr><td colSpan={9} className="text-center py-12 text-gray-400"><i className="fas fa-inbox text-3xl mb-2 block" />No leads found</td></tr>
               ) : leads.map((lead, i) => (

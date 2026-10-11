@@ -4,6 +4,7 @@ import { API_URL } from '../utils/api';
 import toast from 'react-hot-toast';
 import { BROCHURE, SITE } from '../utils/siteConfig';
 import { useLocation } from 'react-router-dom';
+import { Download, Loader2 } from 'lucide-react';
 
 export default function BrochurePopup() {
   const [open, setOpen] = useState(false);
@@ -71,7 +72,7 @@ export default function BrochurePopup() {
           <button type="submit" disabled={loading}
             className="w-full bg-orange-500 hover:bg-orange-400 disabled:opacity-60 text-white
                        font-bold py-3 rounded-xl transition-colors flex items-center justify-center gap-2">
-            {loading ? <i className="fas fa-spinner fa-spin" /> : <i className="fas fa-download" />}
+            {loading ? <Loader2 size={17} className="animate-spin" aria-hidden="true" /> : <Download size={17} aria-hidden="true" />}
             {loading ? 'Processing…' : 'Download Free Brochure'}
           </button>
           <button type="button" onClick={() => { setOpen(false); setDismissed(true); }}

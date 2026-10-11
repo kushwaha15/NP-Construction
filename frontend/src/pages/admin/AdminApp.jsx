@@ -4,6 +4,16 @@ import { NavLink, Navigate, Route, Routes, useLocation, useNavigate } from 'reac
 import axios from 'axios';
 import { API_URL } from '../../utils/api';
 import toast from 'react-hot-toast';
+
+// Load Font Awesome only for admin (not on public site — avoids render-blocking on homepage)
+if (typeof document !== 'undefined' && !document.getElementById('fa-admin-css')) {
+  const link = document.createElement('link');
+  link.id   = 'fa-admin-css';
+  link.rel  = 'stylesheet';
+  link.href = 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css';
+  link.crossOrigin = 'anonymous';
+  document.head.appendChild(link);
+}
 import {
   BarChart3,
   BookOpen,
@@ -65,7 +75,7 @@ function Login({ onLogin }) {
       <Helmet><title>Admin Login | NP Construction</title></Helmet>
       <div className="w-full max-w-sm bg-white p-8 shadow-soft">
         <div className="mb-8 text-center">
-          <img src="/images/NP-Contruction-logo.png" alt="NP Construction" className="mx-auto mb-4 h-14 w-14 object-contain" onError={(event) => { event.currentTarget.style.display = 'none'; }} />
+          <img src="/images/NP-Contruction-logo.webp" alt="NP Construction" className="mx-auto mb-4 h-14 w-14 object-contain" onError={(event) => { event.currentTarget.style.display = 'none'; }} />
           <h1 className="text-xl font-extrabold text-navy">Admin workspace</h1>
           <p className="mt-1 text-sm text-mist-500">Sign in to manage enquiries and content.</p>
         </div>
@@ -86,7 +96,7 @@ function Sidebar({ onLogout, open, onClose }) {
       <aside className={`fixed inset-y-0 left-0 z-50 flex w-64 flex-col bg-navy text-white transition-transform lg:translate-x-0 ${open ? 'translate-x-0' : '-translate-x-full'}`}>
         <div className="flex items-center justify-between border-b border-white/10 px-6 py-5">
           <NavLink to="/admin/dashboard" onClick={onClose} className="flex items-center gap-3">
-            <img src="/images/NP-Contruction-logo.png" alt="NP Construction" className="h-10 w-10 object-contain" onError={(event) => { event.currentTarget.style.display = 'none'; }} />
+            <img src="/images/NP-Contruction-logo.webp" alt="NP Construction" className="h-10 w-10 object-contain" onError={(event) => { event.currentTarget.style.display = 'none'; }} />
             <span><strong className="block text-sm">NP Construction</strong><span className="text-xs text-white/45">Admin workspace</span></span>
           </NavLink>
           <button type="button" onClick={onClose} className="p-2 text-white/60 hover:text-white lg:hidden" aria-label="Close navigation"><X size={20} /></button>

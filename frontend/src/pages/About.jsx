@@ -9,7 +9,7 @@ import useProjectStats from '../hooks/useProjectStats';
 
 const TEAM = [
   { key: 'nathuni', name: 'MR. Nathuni Prasad',  role: 'Founder & Managing Director', img: '/images/team-member1.jpg' },
-  { key: 'ajeet',   name: 'MR. Ajeet Kushwaha',  role: 'Chief Engineer',               img: '/images/ajeet.png' },
+  { key: 'ajeet',   name: 'MR. Ajeet Kushwaha',  role: 'Chief Engineer',               img: '/images/ajeet.webp' },
   { key: 'kishan',  name: 'Mr. Kishan Dev Mahto', role: 'Operations Manager',           img: '/images/team-member-3.png' },
   { key: 'sanjay',  name: 'Mr. Sanjay Ray',           role: 'Head Iron Worker',             img: '/images/team-member-4.jpg' },
 ];
@@ -97,7 +97,7 @@ export default function About() {
       <meta property="og:site_name"   content="NP Construction" />
     </Helmet>
 
-    <motion.main initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }}>
+    <motion.main initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }} layout={false} style={{ willChange: 'opacity, transform' }}>
       <PageHeader
         title="About NP Construction"
         subtitle="RCC reinforcement and iron cutting & binding — done accurately, on schedule, and coordinated around your site."
@@ -123,7 +123,7 @@ export default function About() {
           </div>
           <div className="relative">
             <img
-              src="/images/NP-Steel_fabricon.jpg"
+              src="/images/NP-Steel_fabricon.webp"
               alt="Steel fabrication and erection work by NP Construction"
               width="800" height="600" loading="lazy"
               className="rounded-2xl w-full object-cover aspect-[4/3] shadow-soft"
@@ -140,7 +140,7 @@ export default function About() {
       {/* ── Achievements band ────────────────────────────── */}
       <section
         className="section-dark-photo py-20"
-        style={{ backgroundImage: 'url(/images/NP-Steel_fabricon.jpg)' }}
+        style={{ backgroundImage: 'url(/images/NP-Steel_fabricon.webp)' }}
       >
         <div className="container-x">
           <div className="text-center mb-12">
@@ -202,7 +202,7 @@ export default function About() {
                     alt={`${member.name}, ${member.role}`}
                     width="420" height="420" loading="lazy"
                     className="aspect-square w-full object-cover object-top"
-                    onError={e => { e.currentTarget.src = '/images/NP-Contruction-logo.png'; e.currentTarget.className = 'aspect-square w-full object-contain bg-navy p-12'; }}
+                    onError={e => { e.currentTarget.src = '/images/NP-Contruction-logo.webp'; e.currentTarget.className = 'aspect-square w-full object-contain bg-navy p-12'; }}
                   />
                 </div>
                 <div className="p-5 border-t border-mist-200">
